@@ -3,9 +3,11 @@ const url = require('url')
 const port = process.argv[2]
 
 const server = http.createServer((req, res) => {
-    if (req.url.indexOf('/api/parsetime') !== -1) {
-        const iso = url.parse(req.url, true).query.iso
-        const date = new Date(iso)
+    const urlObject = url.parse(req.url, 'true')
+    const iso = urlObject.query.iso
+    const date = iso = new Date(iso)
+
+    if (urlObject.pathname === '/api/parsetime') {
         const json = {
             hour: date.getHours(),
             minute: date.getMinutes(),
@@ -14,9 +16,7 @@ const server = http.createServer((req, res) => {
         res.writeHead(200, { 'Content-Type': 'application/json' })
         res.write(JSON.stringify(json))
     }
-    else if (req.url.indexOf('/api/unixtime') !== -1) {
-        const iso = url.parse(req.url, true).query.iso
-        const date = new Date(iso)
+    else if (urlObject.pathname === '/api/unixtime') {
         const unixtime = date.getTime()
         const json = {
             unixtime,
