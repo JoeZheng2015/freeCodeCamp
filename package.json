@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.3",
+    "pug": "^2.0.0-rc.1",
     "strftime": "^0.10.0",
     "through2-map": "^3.0.0"
   }
