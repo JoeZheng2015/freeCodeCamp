@@ -13,9 +13,7 @@ mongo.connect('mongodb://localhost:27017/url', (err, db) => {
 
         const original_url = req.params[0]
         collection.findOne({
-            original_url: {
-                $eq: original_url,
-            }
+            original_url,
         })
         .then(document => {
             if (document) {
@@ -45,9 +43,7 @@ mongo.connect('mongodb://localhost:27017/url', (err, db) => {
         const {short_url} = req.params
 
         collection.findOne({
-            short_url: {
-                $eq: short_url,
-            }
+            short_url,
         })
         .then(document => {
             if (document) {
