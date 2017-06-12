@@ -8,9 +8,34 @@
 </head>
 <body>
      <!--enctype 一定要是 multipart/form-data multer 才能解析-->
-    <form action="/profile" method="post" enctype="multipart/form-data">
-        <input type="file" name="file">
-        <input type="submit" value="提交">
-    </form>
+    <input type="file" name="file" class="file">
+    <input type="submit" value="提交" class="btn">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $ = el => document.querySelector(el)
+            const $file = $('.file')
+            const $btn = $('.btn')
+
+            $btn.addEventListener('click', e => {
+                const file = $file.files[0]
+                if (file) {
+                    const formdata = new FormData()
+                    formdata.append('file', file)
+
+                    fetch('/upload', {
+                        method: 'POST',
+                        body: formdata,
+                    })
+                    .then(res => res.text())
+                    .then(res => {
+                        document.write(res)
+                    })
+                }
+                else {
+                    alert('请上传文件')
+                }
+            }, false)
+        }, false)
+    </script>
 </body>
 </html>
