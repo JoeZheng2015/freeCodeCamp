@@ -1,3 +1,4 @@
+// 使用 http.createServer 实现文件6流读取系统
 const fs = require('fs')
 const http = require('http')
 const file = process.argv[3]

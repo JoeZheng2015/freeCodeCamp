@@ -1,3 +1,4 @@
+// 使用 express.static 托管静态文件
 const express = require('express')
 const app = express()
 const port = process.argv[2]

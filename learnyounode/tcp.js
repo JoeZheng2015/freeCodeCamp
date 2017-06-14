@@ -1,3 +1,4 @@
+// 使用 net 包来搭建 tcp
 const net = require('net')
 const strftime = require('strftime')
 

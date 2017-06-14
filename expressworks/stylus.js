@@ -1,3 +1,4 @@
+// 使用 stylus 生成样式文件
 const express = require('express')
 const stylus = require('stylus')
 const app = express()

@@ -1,3 +1,4 @@
+// 使用 crypto 包生成 sha1
 const crypto = require('crypto')
 const express = require('express')
 const app = express()

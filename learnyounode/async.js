@@ -1,3 +1,4 @@
+// 使用原生的 http 发起网络请求
 const http = require('http')
 const datas = ['', '', '']
 let num = 0

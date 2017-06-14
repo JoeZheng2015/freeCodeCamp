@@ -1,3 +1,4 @@
+// 使用 body-parser 获取 post 的 body 的数据
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
